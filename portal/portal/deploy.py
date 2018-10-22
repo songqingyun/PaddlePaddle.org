@@ -446,6 +446,14 @@ def visualdl(source_dir, destination_dir, version, original_lang):
         if os.path.exists(os.path.dirname(script_path)):
             generated_dir = _get_new_generated_dir('visualdl')
 
+            print("---------------------!!")
+            print(script_path)
+            print(source_dir)
+            print(generated_dir)
+            print(original_lang)
+            print("---------------------!!")
+
+
             call([script_path, source_dir, generated_dir, original_lang])
 
             if original_lang:
