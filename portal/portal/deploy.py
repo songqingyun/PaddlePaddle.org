@@ -453,10 +453,12 @@ def visualdl(source_dir, destination_dir, version, original_lang):
             print(original_lang)
             print("---------------------!!")
 
+            if original_lang == None:
+                original_lang = ""
 
             call([script_path, source_dir, generated_dir, original_lang])
 
-            if original_lang:
+            if original_lang and original_lang != "":
                 langs = [original_lang]
             else:
                 langs = ['en', 'zh']

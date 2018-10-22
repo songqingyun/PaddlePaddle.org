@@ -87,6 +87,8 @@ class Command(BaseCommand):
         else:
             menus_to_save.append(content_id)
 
+            print("Useing the id")
+            print(content_id)
             transform(
                 source_dir, options.get('destination_dir', None),
                 content_id, version, None
