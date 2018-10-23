@@ -26,6 +26,13 @@ mkdir documentation
 export ENV=production
 
 echo "3. Executing deploy_documentation."
+
+echo "test-------"
+ls /
+
+echo "test2---"
+ls /VisualDL
+
 python manage.py deploy_documentation --source_dir=$SOURCE_DIR --destination_dir=documentation $GITHUB_BRANCH
 
 if [ "$SOURCE_DIR" -eq "/FludiDoc" ]; then
