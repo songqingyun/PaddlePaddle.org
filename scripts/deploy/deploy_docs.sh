@@ -35,9 +35,8 @@ ls /VisualDL
 
 python manage.py deploy_documentation --source_dir=$SOURCE_DIR --destination_dir=documentation $GITHUB_BRANCH
 
-if [ "$SOURCE_DIR" -eq "/FludiDoc" ]; then
+if [ "$SOURCE_DIR" == "/FludiDoc" ]; then
 python manage.py deploy_documentation --source_dir=$SOURCE_DIR/external --destination_dir=documentation $GITHUB_BRANCH
-fi
 
 echo "4. Build the search index of the newly generated documentation."
 # Need to do this because on Ubuntu node installs as nodejs.
@@ -46,6 +45,8 @@ ln -s /usr/bin/nodejs /usr/bin/node
 
 python manage.py rebuild_index en $GITHUB_BRANCH
 python manage.py rebuild_index zh $GITHUB_BRANCH
+
+fi
 
 echo "5. Documentation generation completed."
 # Display what documentation will be sync to the server
