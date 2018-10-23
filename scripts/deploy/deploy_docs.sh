@@ -27,7 +27,10 @@ export ENV=production
 
 echo "3. Executing deploy_documentation."
 python manage.py deploy_documentation --source_dir=$SOURCE_DIR --destination_dir=documentation $GITHUB_BRANCH
+
+if [ "$SOURCE_DIR" -eq "/FludiDoc" ]; then
 python manage.py deploy_documentation --source_dir=$SOURCE_DIR/external --destination_dir=documentation $GITHUB_BRANCH
+fi
 
 echo "4. Build the search index of the newly generated documentation."
 # Need to do this because on Ubuntu node installs as nodejs.
