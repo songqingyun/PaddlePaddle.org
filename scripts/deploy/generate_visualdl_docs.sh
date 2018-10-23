@@ -8,6 +8,8 @@ LANGUAGE=$3
 echo "Generating visualdl documentation at $DOCS_LOCATION to $DESTINATION_DIR"
 cd "$DOCS_LOCATION"
 
+ls
+
 # Create the build directory for CMake.
 mkdir -p $DOCS_LOCATION/build
 cd $DOCS_LOCATION/build
