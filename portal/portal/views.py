@@ -361,6 +361,10 @@ def suite_root(request):
     portal_helper.set_preferred_language(request, None, 'zh')
     return render(request, 'pps.html')
 
+def huangpu_root(request):
+    portal_helper.set_preferred_language(request, None, 'zh')
+    return render(request, 'huangpu.html')
+
 def about_en(request):
     portal_helper.set_preferred_language(request, None, 'en')
     return render(request, 'about_en.html')
