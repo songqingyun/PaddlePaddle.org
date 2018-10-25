@@ -1,19 +1,11 @@
-*{
-	padding:0;
-	margin:0;
-}
-body{
-	padding:0;
-	margin:0;
-}
 /*最外层*/
-.content{
-	width: 100%;
-	height: 100%;
+#content{
 	background-image: url(../images/huangpu/bg.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+
+
 /*contentInner*/
 .contentInner{
 	width: 1200px;
@@ -46,7 +38,7 @@ body{
     right: 130px;
 	width: 470px;
 	height: auto;
-	
+
 }
 .projectText p{
 	font:26px 黑体;
@@ -232,8 +224,8 @@ body{
 	width: 1167px;
 	height: auto;
 	margin:0 auto;
-	padding-left:18px;
-	padding-right:18px;
+	/*padding-left:18px;
+	padding-right:18px;*/
 	overflow: hidden;
 }
 .pathLeft,.pathCen,.pathRight{
@@ -285,4 +277,223 @@ body{
 	letter-spacing: 8px;
 	text-align: center;
 	padding-top:25px;
+}
+
+/*  Mobile styling below */
+
+body.huangpu-mobile #content {
+    /* Especially targetted at mobile */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#scrollWrap img{
+	display: block;
+}
+
+#scrollWrap img.fill{
+	width: 100%;
+	height: 100%;
+}
+
+#scrollWrap
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#scrollWrap>div
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0rem;
+    left:0rem;
+    transition: transform 0.5s linear;
+}
+.up
+{
+    transform:translateY(-100%);
+}
+.down
+{
+    transform:translateY(100%);
+}
+#scrollWrap .yincang
+{
+    display: none !important;
+}
+/*第一页*/
+#scrollWrap>div{
+	/*background-color: #021358;*/
+	background-image: url(../images/huangpu/bg_03.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#scrollWrap .logo{
+	/*position: absolute;
+	top:1.5rem;
+	right:0.74rem;*/
+    margin-top: 1em;
+    margin-right: 0.75em;
+    margin-left: auto;
+	width: 1.41em;
+	height: 0.36em;
+}
+.hpjx{
+	/*position: absolute;
+	top:2rem;
+	right:0.75rem;*/
+    margin-right: 0.75em;
+    margin-left: auto;
+	width: 3.27em;
+	height: 0.77em;
+}
+.text{
+	position: absolute;
+	top:2.35em;
+	right:0.78em;
+	width: 4.3em;
+	height: auto;
+}
+.text p{
+	font:0.24em 黑体;
+	color: #ffffff;
+	text-align: right;
+	letter-spacing: 0.10em;
+	margin-bottom: 0.13em;
+}
+.text a{
+	width: 2.79em;
+	height: 0.41em;
+	display: block;
+	text-decoration: none;
+	margin-left: 1.15em;
+}
+#scrollWrap .timeBg{
+	position: absolute;
+	left:0;
+	bottom: 2.65em;
+	width: 5.64em;
+	height: 5.92em;
+}
+#scrollWrap .time{
+	position: absolute;
+	right:0.56em;
+	bottom: 3.45em;
+	width: 0.76em;
+	height: 3.87em;
+}
+/*第二页*/
+.GDTopbg{
+	width: 100%;
+    margin-top: 1em;
+	height: 4.82em;
+    background-image: url(../images/huangpu/cenBG2.png);
+    background-size:100% 100%;
+    position: relative;
+}
+.GDTopbg img{
+    padding-top: 0.5em;
+    width: 3.17em;
+    height: 2.44em;
+    margin-left: 2.3em;
+}
+.GDTopbg p {
+	width: 100%;
+	font:0.34em 黑体;
+	color: #fefefe;
+	text-align: center;
+
+}
+.GDTopbg p:nth-of-type(1){
+ 	 margin-top: 2.6em;
+     margin-left: 0.17em;
+}
+.GDTopbg p:nth-of-type(2){
+    position: absolute;
+    left: 0.17em;
+    margin-top: 0.4em;
+}
+.GDTopimg{
+	position: absolute;
+	top:1.25em;
+	left:1.7em;
+	width: 3.2em;
+	height: 2.45em;
+}
+.GDToptext{
+	width: 3em;
+	position: absolute;
+	top:3.6em;
+	left: 1.8em;
+}
+.GDToptext1{
+	position: absolute;
+	top:3.6em;
+	left: 1.15em;
+}
+.GDToptext1 p:nth-of-type(1){
+	font:0.34em 黑体;
+	color: #fefefe;
+	text-align: center;
+	margin-top:0.55em;
+	margin-bottom: 0.3em;
+}
+.GDToptext1 p:nth-of-type(2){
+	font:0.38em 黑体;
+	color: #fefefe;
+	text-align: center;
+}
+.GDToptext p:nth-of-type(1){
+	font:0.34em 黑体;
+	color: #fefefe;
+	text-align: center;
+	margin-top:0.55em;
+	margin-bottom: 0.3em;
+}
+.GDToptext p:nth-of-type(2){
+	font:0.38em 黑体;
+	color: #fefefe;
+	text-align: center;
+}
+.GDBotbg{
+    position: relative;
+    background-image: url(../images/huangpu/pathBG.png);
+    background-size: 100% 100%;
+    margin: 2em auto 0;
+    width: 3.89em;
+    height: 3.41em;
+}
+.GDBotbg h3{
+	font:0.3em 黑体;
+	color: #FEFEFE;
+    padding-top: 1.4em;
+	margin-bottom: 1.4em;
+	text-align: center;
+}
+.GDBotbg p{
+    padding-left: 0.1em;
+	font:0.24em 黑体;
+	color: #FEFEFE;
+}
+/*第五页*/
+#scrollWrap .last{
+	background-image: url(../images/huangpu/fifthBG.png) !important;
+ 	background-repeat: no-repeat;
+ 	background-size: 100% 100%;
+}
+.ewm{
+	width: 2.1em;
+	height: 2.1em;
+	margin:3.25em auto;
+}
+.ewm p{
+	font:0.32em 黑体;
+	color: #FEFEFE;
+	text-align: center;
+	letter-spacing: 0.05em;
+	margin-top:0.4em;
 }
