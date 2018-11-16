@@ -565,12 +565,11 @@ def tracked_download(request):
         else:
             fields = {
                 'Date': today.strftime('%Y-%m-%d'),
-                '公司内部用户': is_internal_ip,
-                'paddlepaddle.org': 0,
-                'wiki.baidu.com': 0,
-                'github.com': 0
+                '公司内部用户': is_internal_ip
             }
-            fields[referer.netloc] = 1
+
+            for acceptable_source in acceptable_sources:
+                fields[referer.netloc] = 1 if referer.netloc == acceptable_source else 0
 
             requests.post(settings.AIRTABLE_WHEEL_DOWNLOADS, headers = {
                 'Authorization': 'Bearer ' + settings.AIRTABLE_API_KEY,
