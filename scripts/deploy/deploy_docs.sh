@@ -59,7 +59,13 @@ rsync -r documentation/ content_mgr@$STAGE_DEPLOY_IP:/var/pages/documentation
 rsync -r /var/pages/menus/ content_mgr@$STAGE_DEPLOY_IP:/var/pages/menus
 rsync -r /var/pages/indexes/ content_mgr@$STAGE_DEPLOY_IP:/var/pages/indexes
 
-echo "7. Documentation deployed. Clean up."
+echo "7. Deploy indexes."
+export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+
+aws s3 cp /var/pages/indexes/indexes s3://paddlepaddle.org/indexes  --recursive
+
+echo "8. Documentation deployed. Clean up."
 chmod 644 content_mgr.pem
 rm -rf documentation
 rm -rf /var/pages/menus
